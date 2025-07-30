@@ -1,0 +1,48 @@
+{
+	"name": "server",
+	"type": "module",
+	"license": "ISC",
+	"version": "1.0.0",
+	"main": "src/server.js",
+	"author": "Omnath Shinde",
+	"description": "Node.js Server",
+	"keywords": [
+		"Node.js",
+		"Express"
+	],
+	"scripts": {
+		"start": "node src/server",
+		"dev": "nodemon src/server",
+		"prepare": "husky",
+		"lint": "eslint .",
+		"format": "prettier --write ."
+	},
+	"dependencies": {
+		"dotenv": "^17.2.1",
+		"express": "^5.1.0"
+	},
+	"devDependencies": {
+		"@eslint/js": "^9.32.0",
+		"eslint": "^9.32.0",
+		"eslint-config-prettier": "^10.1.8",
+		"eslint-plugin-import": "^2.32.0",
+		"eslint-plugin-node": "^11.1.0",
+		"eslint-plugin-prettier": "^5.5.3",
+		"eslint-plugin-simple-import-sort": "^12.1.1",
+		"globals": "^16.3.0",
+		"husky": "^9.1.7",
+		"lint-staged": "^16.1.2",
+		"nodemon": "^3.1.10",
+		"prettier": "^3.6.2",
+		"prettier-eslint": "^16.4.2"
+	},
+	"lint-staged": {
+		"**/*.{js}": [
+			"eslint --fix",
+			"prettier --write"
+		],
+		"**/*.{json,md,css,html}": [
+			"prettier --write"
+		]
+	}
+}
