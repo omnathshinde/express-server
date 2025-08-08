@@ -1,18 +1,18 @@
-import "dotenv/config";
+import app from "#src/app.js";
 
-import express from "express";
-
-const app = express();
-
-app.get("/", (req, res) => {
-	res.status(200).json({ message: "Hello World!" });
-});
-
+// 🌍 Config
 const PORT = process.env.PORT || 3000;
 const HOST = process.env.HOST || "localhost";
 
+// 🚀 Start Server
 (async () => {
-	app.listen(PORT, HOST, () => {
-		console.log(`Server running at http://${HOST}:${PORT}`);
-	});
+	try {
+		console.clear();
+		app.listen(PORT, HOST, () => {
+			console.log(`Server running at http://${HOST}:${PORT}`);
+		});
+	} catch (error) {
+		console.error("❌ Server startup failed:", error.message);
+		process.exit(1);
+	}
 })();
