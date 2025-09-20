@@ -6,7 +6,7 @@ import winston from "winston";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const logDir = path.resolve(__dirname, "../../logs");
+const logDir = path.resolve(__dirname, "../../../logs");
 if (!fs.existsSync(logDir)) {
 	fs.mkdirSync(logDir, { recursive: true });
 }

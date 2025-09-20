@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 import morgan from "morgan";
 
-import logger from "#src/configs/logger.js";
+import logger from "#configs/logger.js";
 
 const jsonFormat = (tokens, req, res) => {
 	return JSON.stringify({
@@ -21,6 +21,7 @@ const jsonFormat = (tokens, req, res) => {
 const logsHandler = morgan(jsonFormat, {
 	stream: {
 		write: (message) => {
+			console.log(message);
 			const json = JSON.parse(message);
 			logger.info(json);
 		},

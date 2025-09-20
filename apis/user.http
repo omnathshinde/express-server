@@ -1,0 +1,92 @@
+@url = http://localhost:3000
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzUxMDIyNjYwfQ.5ldSI5Xlh8uY_K-Cmc0JzMnwovTQUCP-lUYDCcLZXXA
+
+### Get all users
+GET {{url}}/user?
+Authorization: JWT {{token}}
+Content-Type: application/json
+
+###
+
+### Get all users
+GET {{url}}/user/search/records?status=1
+Authorization: JWT {{token}}
+Content-Type: application/json
+
+###
+
+### Get a specific user by ID
+GET {{url}}/user/8
+Authorization: JWT {{token}}
+Content-Type: application/json
+
+
+###
+
+### Create a new user
+POST {{url}}/user
+Authorization: JWT {{token}}
+Content-Type: application/json
+
+{
+  "username": "omnath",
+  "password": "12345",
+}
+
+###
+
+### Update a user
+PUT {{url}}/user/2
+Authorization: JWT {{token}}
+Content-Type: application/json
+
+{
+  "username": "omnath1",
+  "password": "12345"
+}
+
+
+###
+
+### Delete a user
+DELETE {{url}}/user/1
+Authorization: JWT {{token}}
+Content-Type: application/json
+
+###
+
+### Create Bulk Users
+POST {{url}}/user/bulk-records
+Authorization: JWT {{token}}
+Content-Type: application/json
+
+[
+    {
+        "username":"admin",
+        "password":"12345"
+    },
+    {
+        "username":"omnath",
+        "password":"12345"
+    },
+    {
+        "username":"shubham",
+        "password":"12345"
+    },
+    {
+        "username":"yug",
+        "password":"12345"
+    },
+    {
+        "username":"sagar",
+        "password":"12345"
+    },
+    {
+        "username":"sachin",
+        "password":"12345"
+    },
+    {
+        "username":"ganesh",
+        "password":"12345"
+    }
+]
